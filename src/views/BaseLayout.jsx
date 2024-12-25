@@ -28,15 +28,21 @@ const BaseLayout = () => {
                 Contact Us
               </Link>
             </li>
+            {/* Link to About Us Page */}
+            <li className="nav-item">
+              <Link className="nav-link" to="/about-us">
+                About Us
+              </Link>
+            </li>
           </ul>
         </nav>
       </header>
-      
+
       {/* Main Content Area */}
       <main id="content">
         <Outlet />
       </main>
-      
+
       {/* Footer Section */}
       <footer className="bg-light">
         <p>© Copyright 2024</p>
