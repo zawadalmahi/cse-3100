@@ -1,9 +1,36 @@
-// ContactUs.jsx: Renders a modern "Contact Us" page with a hero section, contact details, and a form.
-
-import React from 'react';
+import React, { useState } from 'react';
 import './ContactUs.css'; // Import CSS for styling
 
 export default function ContactUs() {
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    message: '',
+  });
+
+  const [error, setError] = useState('');
+
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
+    setFormData({ ...formData, [id]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Validation: Ensure Name and Phone fields are filled
+    if (!formData.name || !formData.phone) {
+      setError('Name and Phone Number are required.');
+      return;
+    }
+
+    // Clear the error if validation passes
+    setError('');
+
+    // Submit the form (for now, just log the data)
+    console.log('Form submitted:', formData);
+  };
+
   return (
     <div className="contact-us-page">
       {/* Hero Section */}
@@ -45,7 +72,9 @@ export default function ContactUs() {
           {/* Contact Form */}
           <div className="col-md-6 contact-form">
             <h2>Contact</h2>
-            <form>
+            <form onSubmit={handleSubmit}>
+              {error && <p className="error-message">{error}</p>}
+
               <div className="mb-3">
                 <label htmlFor="name" className="form-label">
                   Name
@@ -55,6 +84,23 @@ export default function ContactUs() {
                   className="form-control"
                   id="name"
                   placeholder="Enter your name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <div className="mb-3">
+                <label htmlFor="phone" className="form-label">
+                  Phone Number
+                </label>
+                <input
+                  type="tel"
+                  className="form-control"
+                  id="phone"
+                  placeholder="Enter your phone number"
+                  value={formData.phone}
+                  onChange={handleInputChange}
+                  required
                 />
               </div>
               <div className="mb-3">
@@ -66,6 +112,8 @@ export default function ContactUs() {
                   id="message"
                   rows="4"
                   placeholder="Write your message"
+                  value={formData.message}
+                  onChange={handleInputChange}
                 ></textarea>
               </div>
               <button type="submit" className="btn btn-primary">
