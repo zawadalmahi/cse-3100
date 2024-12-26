@@ -1,6 +1,6 @@
 .about-us-container {
     padding: 30px;
-    background-color: hsl(198, 75%, 55%);
+    background-color: hsl(198, 39%, 94%);
     color: #1b1b1b;
     font-family: Arial, sans-serif;
   }
@@ -50,7 +50,7 @@
   
   .about-us-profile {
     text-align: center;
-    background: #fff;
+    background: #9f9c9c;
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

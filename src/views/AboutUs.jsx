@@ -3,10 +3,10 @@ import './AboutUs.css';
 //about us portion
 const AboutUs = () => {
   const profiles = [
-    { id: '20220104120', name: 'Zawad Al Mahi', image: 'https://via.placeholder.com/150' },
-    { id: '20220104123', name: 'Abdullah Jubair', image: 'https://via.placeholder.com/150' },
-    { id: '20220104124', name: 'Hasibur Rahman Srijon', image: 'https://via.placeholder.com/150' },
-    { id: '20210204077', name: 'Rakibul Islam', image: 'https://via.placeholder.com/150' },
+    { id: '20220104120', name: 'Zawad Al Mahi', image: 'https://static.vecteezy.com/system/resources/thumbnails/049/462/202/small_2x/anonymous-man-in-black-hoodie-with-hidden-face-against-dark-background-for-mystery-and-secrecy-themes-photo.jpeg' },
+    { id: '20220104123', name: 'Abdullah Jubair', image: 'https://static.vecteezy.com/system/resources/thumbnails/049/462/202/small_2x/anonymous-man-in-black-hoodie-with-hidden-face-against-dark-background-for-mystery-and-secrecy-themes-photo.jpeg' },
+    { id: '20220104124', name: 'Hasibur Rahman Srijon', image: 'https://static.vecteezy.com/system/resources/thumbnails/049/462/202/small_2x/anonymous-man-in-black-hoodie-with-hidden-face-against-dark-background-for-mystery-and-secrecy-themes-photo.jpeg' },
+    { id: '20210204077', name: 'Rakibul Islam', image: 'https://static.vecteezy.com/system/resources/thumbnails/049/462/202/small_2x/anonymous-man-in-black-hoodie-with-hidden-face-against-dark-background-for-mystery-and-secrecy-themes-photo.jpeg' },
   ];
 
   return (
@@ -34,7 +34,7 @@ const AboutUs = () => {
           </p>
         </div>
       </div>
-      <div className="about-us-images">
+      <div className="about-us-images">{/*image portion*/}
         {profiles.map((profile) => (
           <div className="about-us-profile" key={profile.id}>
             <img src={profile.image} alt={profile.name} />
